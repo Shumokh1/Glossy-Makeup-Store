@@ -1,0 +1,1656 @@
+<!------------------------------------------------------------style.css ------------------------------------------------------>
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: cursive;
+
+
+}
+
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(img/Picture2.jpeg);
+    background-size: cover;
+    background-position: center;
+
+}
+
+.navbar {
+
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 120px;
+    cursor: pointer;
+}
+
+
+
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+
+
+
+.navbar ul li:hover::after {
+    width: 65px;
+}
+
+
+
+
+
+@media(max-width: 600px) {
+
+
+    .navbar {
+        padding: 20px 10px !important;
+        /* Use !important to make sure that JavaScript doesn't override the padding on small screens */
+    }
+
+    .nav{
+        float: none;
+        display: block;
+        text-align: right;
+    }
+
+}
+
+.part1 {
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(img/Picture2.jpeg);
+
+}
+
+footer, header, main, nav, section {
+    display: block; }
+
+
+
+.logo {
+    width: 120px;
+    cursor: pointer;
+}
+
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.navbar ul li::after {
+    content: '';
+    height: 2px;
+    width: 0%;
+    background: #c7142c;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+
+}
+
+.navbar ul li:hover::after {
+    width: 65px;
+}
+
+.content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+}
+
+.content h1 {
+    font-size: 70px;
+    margin-top: 80px;
+    font-family: cursive;
+}
+
+.content p {
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+}
+
+.abutton {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    font-family: 'Courier New', Courier, monospace;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+
+}
+
+span {
+    background: #c7142c;
+    height: 100%;
+    width: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+    border-radius: 25px;
+
+}
+
+.abutton:hover span {
+    width: 100%;
+
+}
+
+.abutton:hover {
+    border: none;
+    color: #fff;
+}
+
+
+.fotter {
+    width: 200px;
+    cursor: pointer;
+}
+/*------info------*/
+.info h1 {
+    padding-top: 50px;
+    font-family: Georgia, sans-serif;
+    font-size: 5em;
+    letter-spacing: -2px;
+
+}
+<!------------------------------------------------------------ DBconnection.php ------------------------------------------>
+<?php
+
+$dbhost = "localhost";
+$dbuser = "root";
+$dbpass = "";
+$db = "makeup";
+$conn = new mysqli($dbhost, $dbuser, $dbpass, $db);
+$sSQL = 'SET CHARACTER SET utf8';
+mysqli_query($conn, $sSQL);
+
+<!------------------------------------------------------------ index.php ------------------------------------------------------>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Makeup</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <!--to start with bootstrap you should include these 2 lines-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <section>
+        <!--navbar-->
+        <div class="banner">
+            <div class="navbar">
+                <img src="img/Picture1.png" class="logo">
+                <ul>
+                    <li><a href="index.php" class="active">Home</a></li>
+                    <li><a href="Products.php">Products</a></li>
+                    <li><a href="cart.php">Cart</a></li>
+                    <li><a href="Contact.php">Contact</a></li>
+                </ul>
+            </div>
+
+            <!--body-->
+            <div class="content">
+                <h1>Welcome to Glossy store</h1>
+                <p>A place to discover amazing products, thought-provoking ideas, and our point of view on the world of
+                    beauty.
+                </p>
+
+                <div>
+                    <a href="#Aboutus" class="abutton"><span></span>Learn more</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!------About us----------->
+    <section class="info">
+        <h1 id="Aboutus">About us</h1>
+        <div class="row">
+
+            <div class="col-md-6 col-10 mb-3 justify p-4">
+                <p>
+                    Discover the latest beauty at Glossy!
+                    We offer a full spectrum of colors from classical to the latest trends.
+                    We create a world of colors and we want to share it with you.
+                    From our unique color cosmetics to our innovative skincare products we bring makeup and skincare to
+                    a new
+                    level.
+                </p>
+                <p>
+                    It's our mission to redefine luxury beauty by creating amazing products at prices that don't break
+                    the bank. We imagine, develop,
+                    test and manufacture all under one roof for next level colour + formulas. We pride ourselves on
+                    being 100% cruelty-free,
+                    wallet-friendly and keeping our community at the center of our world.
+                </p>
+            </div>
+            <div class="col-md-6 col-10 mb-3 justify">
+                <img src="img/makeup1.png" class="rounded float-end" alt="makeup" width="400px">
+            </div>
+        </div>
+    </section>
+
+</body>
+
+<!--footer-->
+<footer class="bg-dark text-center text-white">
+
+    <div class="container ">
+        <div class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top bg-dark ">
+            <div class=" d-flex align-items-center">
+                <div class="row margin-bottom-60">
+                    <div class="col-lg-3 col-md-3 tm-footer-div">
+                        <img src="img/Picture1.png" class="fotter">
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 tm-footer-div">
+
+                        <p class="margin-top-15">A place to discover amazing products, thought-provoking ideas, and our
+                            point of view on the world of
+                            beauty.</p>
+
+                    </div>
+                    <div class="col-lg-3 col-md-3 tm-footer-div ">
+                        <h5><a href="Adminlogin.php" class="text-white">Admin login</a></h5>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+</footer>
+
+</html>
+
+<!------------------------------------------------------------products.php------------------------------------------------------>
+<!DOCTYPE html>
+
+<?php
+session_start();
+//initialize cart if not set or is unset
+if (!isset($_SESSION['cart'])) { 
+    $_SESSION['cart'] = array(); //start a session if it was not set
+}
+
+
+?>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>Products</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <!--to start with bootstrap you should include these 2 lines-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <?php
+    include_once "DBconnection.php";
+    ?>
+
+    <!--navbar-->
+    <section class="part1">
+        <div class="navbar">
+            <img src="img/Picture1.png" class="logo">
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="Products.php" class="active">Products</a></li>
+                <li><a href="cart.php">cart </a></li>
+                <li><a href="Contact.php">Contact</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!--3 cards-->
+    <section class="" style="background-color: #eee;">
+        <div class="container  ">
+            <div class="row d-flex p-5">
+
+                <div class=" card card-body rounded-3 col-lg-4 col-md-4 text-center  align-items-center">
+                    <img src="img/locost.jpg" class="bd-placeholder-img rounded-circle " width="140" height="140">
+
+                    <h2 class="fw-normal text-danger p-4 ">Skin Care </h2>
+                    <p class="type p-3">L'Occitane en Provence is an international French retailer of body, face and
+                        home
+                        products. The
+                        company was
+                        founded in 1976 by Olivier Baussan.
+                        Baussan exercised his enthusiasm for natureâ€™s most precious treasures and created a cosmetic
+                        company
+                        based on
+                        essential oils and natural ingredients.</p>
+
+
+                </div>
+                <div class=" card card-body rounded-3  col-lg-4 col-md-4  align-items-center">
+                    <img src="img/makeuppro.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140"
+                        preserveAspectRatio="xMidYMid slice" focusable="false">
+                    <h2 class="fw-normal text-danger p-4">Make up</h2>
+                    <p class="type p-3">An absolute beauty must-have, makeup can be your best friend! An
+                        incredible
+                        selection of cosmetics
+                        for a
+                        fresh-looking complexion, vibrant lips or smoky eyes is waiting for you. Let your
+                        imagination go
+                        wild and try
+                        an infinite variety of different looks!
+                        Best-sellers or new arrivals, Glossry puts the fun back in makeup
+                    </p>
+
+                </div>
+                <div class=" card card-body rounded-3  col-lg-4 col-md-4  align-items-center text-center">
+                    <img src="img/perfum.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140">
+                    <h2 class="fw-normal text-danger p-4">Perfumes</h2>
+                    <p class="type p-3">
+                        Discover many perfumes which manufactured handcrafted in France using the most luxurious
+                        ingredients. Inspired
+                        by the rich heritage and simple sophistication of the Middle East. Perfumes that we
+                        offer reflects
+                        limitless
+                        possibilities,
+                        personalities and desires to celebrate and enhance oneâ€™s infinite layers.</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--print the products card from sql-->
+    <section>
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class=" text align-items-center ">
+                    <h4 class="text-center text-danger">&nbsp; Products &nbsp;&nbsp;</h4>
+
+                </div><br />
+
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <?php
+                    $sql = "SELECT * FROM item";
+
+                    $result = $conn->query($sql);//save the data of all items in variable result
+
+                    if ($result->num_rows > 0) {//if there is records 
+
+                    
+                        //fetch in data and print it row by row->print the cards as many times as items in database
+                        while ($row = $result->fetch_assoc()) {
+                    ?>
+                    <div class="col">
+                        <div class="card shadow-sm">
+
+                            <div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;"
+                                align="center">
+                                <img src="img/<?php echo $row["image"]; ?>" class="bd-placeholder-img card-img-top"
+                                    width="100%" height="225" /><br />
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        <?php echo $row["name"]; ?>
+                                    </p>
+                                    <h4 class="text-danger">$
+                                        <?php echo $row["price"]; ?>
+                                    </h4>
+                                    <a href="add_cart.php?id=<?php echo $row['productID']; ?>"
+                                        class="btn btn-danger btn-sm">Add to Cart</a> <!--it will save it in session-> open add_cart.php and send with it the product id-->
+
+
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+
+                    </div>
+                    <?php
+                        }
+                    }
+                    ?>
+                </div>
+
+            </div>
+        </div>
+
+
+    </section>
+
+
+
+
+</body>
+<!--footer-->
+<footer class="bg-dark text-center text-white">
+
+    <div class="container ">
+        <div class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top bg-dark ">
+            <div class=" d-flex align-items-center">
+                <div class="row margin-bottom-60">
+                    <div class="col-lg-3 col-md-3 tm-footer-div">
+                        <img src="img/Picture1.png" class="fotter">
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 tm-footer-div">
+
+                        <p class="margin-top-15">A place to discover amazing products, thought-provoking ideas, and our
+                            point of view on the world of
+                            beauty.</p>
+
+                    </div>
+                    <div class="col-lg-3 col-md-3 tm-footer-div ">
+                        <h5><a href="Adminlogin.php" class="text-white">Admin login</a></h5>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+</footer>
+
+</html>
+
+<!-----------------------------------------------------add_cart.php ----------------------------------------------------->
+<?php
+session_start();
+
+
+if (!in_array($_GET['id'], $_SESSION['cart'])) { //if product is not in cart
+	array_push($_SESSION['cart'], $_GET['id']);//take id and put product in cart
+}
+header('location: products.php');
+?>
+
+<!---------------------------------------------------------- cart.php ------------------------------------------------------->
+
+<?php
+session_start(); //session is already opened in products.php
+?>
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <title>Cart</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!--to start with bootstrap you should include these 2 lines-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <?php
+        include_once "DBconnection.php";
+
+        
+        if (isset($_POST['submit'])) {
+            //php-user input validation
+            if (empty($_POST['typeName']) && empty($_POST['address'])) {
+                echo 'swal("Wrong!", "Empty inputs", "error");</script>';
+
+
+
+
+            } else if (empty($_SESSION['cart'])) {
+                echo 'swal("Wrong!", "You can not complete the order! your cart is empty!", "error");</script>';
+
+
+            } else {
+                $name = $_POST['typeName'];
+                $address = $_POST['address'];
+
+                $sql = "INSERT INTO `order`(`Custmername`, `Address`) VALUES ('" . $name . "' ,'" . $address . "')";
+                echo $sql;
+                $conn->query($sql);
+                $sql1 = "SELECT `orderID` FROM `order` WHERE `Custmername` = '" . $name . "' ORDER BY `orderID` DESC LIMIT 1";//for arranging
+                $result1 = $conn->query($sql1);
+                $id;
+                while ($row = $result1->fetch_assoc()) {
+                    $id = $row['orderID'];
+                }
+                $index1 = 0;
+                for ($i = 0; $i < count($_SESSION['cart']); $i++) {
+                    $itemid = $_SESSION['cart'][$i];
+
+                    $additem = "INSERT INTO `orderitem`(`orderID`, `productID`) VALUES ('" . $id . "','" . $itemid . "')";//relation tables 
+                    $conn->query($additem);
+                    $index1++;
+                }
+                unset($_SESSION['cart']); //unset the session after you send data to sql
+                header('location: confirmation_order.php');
+            }
+        }
+        ?>
+    <section class="part1">
+        <div class="navbar">
+            <img src="img/Picture1.png" class="logo">
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="Products.php">Products</a></li>
+                <li><a href="cart.php" class="active">cart</a></li>
+                <li><a href="Contact.php">Contact</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="h-100 h-custom" style="background-color: #eee;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body ">
+
+                            <div class="row">
+                                <div class="col-lg-8">
+                                    <h5 class="mb-3"><a href="#!" class="text-body"><i
+                                                class="fas fa-long-arrow-alt-left me-2"></i>Cart</a></h5>
+                                    <hr>
+
+
+
+                                    <?php
+                                        //initialize total
+                                        $total = 0;
+                                        if (!empty($_SESSION['cart'])) {
+
+                                            //connection
+                                            include_once "DBconnection.php";//to get all info of products 
+
+                                            $sql = "SELECT * FROM item WHERE productID IN (" . implode(',', $_SESSION['cart']) . ")";//get the rest of the info of the product in session
+                                            $query = $conn->query($sql);
+                                        ?>
+                                    <p> you have
+                                        <?php echo count($_SESSION['cart']); ?> item in your cart
+                                    </p>
+                                    <?php
+                                            while ($row = $query->fetch_assoc()) {
+                                            ?>
+
+                                    <div class="card mb-3 ">
+
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between">
+                                                <div class="d-flex flex-row align-items-center">
+                                                    <div>
+                                                        <img src="img/<?php echo $row["image"]; ?>"
+                                                            class="img-fluid rounded-3" alt="Shopping item"
+                                                            style="width: 65px;">
+                                                    </div>
+                                                    <div class="ms-3">
+                                                        <h5>
+                                                            <?php echo $row['name']; ?>
+                                                        </h5>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex flex-row align-items-center">
+
+                                                    <div style="width: 80px;">
+                                                        <h5 class="mb-0">
+                                                            <?php echo number_format($row['price'], 2); ?>
+
+                                                        </h5>
+                                                    </div>
+                                                    <?php $total += $row['price']; ?>
+
+                                                    <a href="delete_cart.php?id=<?php echo $row['productID']; ?>"
+                                                        class="btn btn-danger btn-sm"><span
+                                                            class="glyphicon glyphicon-trash"></span> delete </a>
+                                                    <a href="#!" style="color: #cecece;"><i
+                                                            class="fas fa-trash-alt"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <?php
+
+                                            }
+                                        } else {
+                                                ?>
+                                    <tr>
+                                        <td colspan="4" class="text-center">No Item in Cart</td>
+                                    </tr>
+                                    <?php
+                                        }
+                                            ?>
+
+
+                                </div>
+                                <div class="col-lg-4">
+
+                                    <div class="card bg-light  rounded-3">
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                                <h5 class="mb-0">Shipping Address</h5>
+
+                                            </div>
+
+
+
+                                            <form class="mt-4" method="post" name="form1" action="cart.php"
+                                                onsubmit=" return validateform()">
+                                                <div class="form-outline form-white mb-4">
+                                                    <label class="form-label" for="typeName">Name</label>
+                                                    <input type="text" id="typeName" name="typeName"
+                                                        class="form-control form-control-lg" siez="17" />
+                                                    <div id="m1"></div> <br />
+
+                                                </div>
+
+                                                <div class="form-outline form-white mb-4">
+                                                    <label class="form-label" for="typeText">Address</label>
+                                                    <input type="text" id="address" name="address"
+                                                        class="form-control form-control-lg" siez="17" />
+                                                    <div id="m2"></div> <br />
+
+                                                </div>
+
+
+                                                <hr class="my-4">
+
+                                                <div class="d-flex justify-content-between">
+                                                    <p class="mb-2">Subtotal</p>
+                                                    <p class="mb-2">$
+                                                        <?php echo number_format($total, 2); ?>
+                                                    </p>
+                                                </div>
+
+                                                <div class="d-flex justify-content-between">
+                                                    <p class="mb-2">Shipping</p>
+                                                    <p class="mb-2">$20.00</p>
+                                                </div>
+
+                                                <div class="d-flex justify-content-between mb-4">
+                                                    <p class="mb-2">Total</p>
+                                                    <p class="mb-2">$
+                                                        <?php echo number_format($total + 20, 2); ?>
+                                                    </p>
+                                                </div>
+
+                                                <div class="form-group text-center">
+                                                    <button class="btn btn-danger btn-block btn-lg "
+                                                        name="submit">Order</button> <br />
+                                                </div>
+
+
+                                            </form>
+                                            <script>
+                                                //js user input validation
+                                                var name1 = document.getElementById("typeName");
+                                                name1.onfocus = function () {
+                                                    m1.innerHTML = ""
+                                                };
+                                                var address1 = document.getElementById("address");
+                                                address1.onfocus = function () {
+                                                    m2.innerHTML = ""
+                                                };
+                                                function validateform() {
+                                                    var name = document.form1.typeName.value;
+                                                    var address = document.form1.address.value;
+                                                    var p = address.length < 19;
+                                                    var n = name === null || name === "";
+                                                    if (p)
+                                                        document.getElementById("m2").innerHTML = "Address must be at least 19 characters long.";
+
+                                                    if (n)
+                                                        document.getElementById("m1").innerHTML = "Name can't be blank";
+
+
+                                                    if (p || n)
+                                                        return false;
+
+                                                    else return true;
+
+                                                }
+
+
+                                            </script>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--footer-->
+    <footer class="bg-dark text-center text-white">
+
+        <div class="container ">
+            <div class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top bg-dark ">
+                <div class=" d-flex align-items-center">
+                    <div class="row margin-bottom-60">
+                        <div class="col-lg-3 col-md-3 tm-footer-div">
+                            <img src="img/Picture1.png" class="fotter">
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 tm-footer-div">
+
+                            <p class="margin-top-15">A place to discover amazing products, thought-provoking ideas, and
+                                our point of view on the world of
+                                beauty.</p>
+
+                        </div>
+                        <div class="col-lg-3 col-md-3 tm-footer-div ">
+                            <h5><a href="Adminlogin.php" class="text-white">Admin login</a></h5>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </footer>
+
+
+</body>
+
+
+
+</html>
+
+<!--------------------------------------------------- delete_cart.php ---------------------------------------------->
+<?php
+session_start();
+
+//remove the id from our cart array
+$key = array_search($_GET['id'], $_SESSION['cart']);
+unset($_SESSION['cart'][$key]);
+
+header('location: cart.php');
+?>
+
+<!----------------------------------------------------- confirmation_order ----------------------------------------->
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>confirmation order</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <!--to start with bootstrap you should include these 2 lines-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+
+
+
+    <section class="part1">
+        <div class="navbar">
+            <img src="img/Picture1.png" class="logo">
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="Products.php">Products</a></li>
+                <li><a href="cart.php">cart</a></li>
+                <li><a href="Contact.php" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </section>
+    <section class="h-100 h-custom" style="background-color: #eee;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center card card-body row rounded-3">
+
+                <div class=" text align-items-center text-center">
+                    <h4 class="p-4 ">&nbsp;Thank you for your order&nbsp;&nbsp;</h4>
+
+
+                    <p>
+                        Having trouble? <a href="contact.php">Contact us</a>
+                    </p>
+                    <p class="lead">
+                        <a class="btn btn-danger btn-sm" href="index.php" role="button">Continue to homepage</a>
+                    </p>
+
+                </div>
+
+                <div class="col-lg-6 col-md-6">
+
+                </div>
+
+            </div>
+        </div>
+
+
+        </div>
+    </section>
+
+
+
+
+</body>
+
+<!--footer-->
+<footer class="bg-dark text-center text-white">
+
+    <div class="container ">
+        <div class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top bg-dark ">
+            <div class=" d-flex align-items-center">
+                <div class="row margin-bottom-60">
+                    <div class="col-lg-3 col-md-3 tm-footer-div">
+                        <img src="img/Picture1.png" class="fotter">
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 tm-footer-div">
+
+                        <p class="margin-top-15">A place to discover amazing products, thought-provoking ideas, and our
+                            point of view on the world of
+                            beauty.</p>
+
+                    </div>
+                    <div class="col-lg-3 col-md-3 tm-footer-div ">
+                        <h5><a href="Adminlogin.php" class="text-white">Admin login</a></h5>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+</footer>
+
+</html>
+
+<!------------------------------------------------------ contact.php -------------------------------------------------->
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contact</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!--to start with bootstrap you should include these 2 lines-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <?php
+        include_once "DBconnection.php";
+        if (isset($_POST['submit'])) {
+            //php user input validation
+            if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['subject']) && !empty($_POST['message'])) {
+                $name = $_POST["name"];
+                $email = $_POST["email"];
+                $subject = $_POST["subject"];
+                $content = $_POST["message"];
+                $sql = "INSERT INTO `contact` (`name`, `email`, `subject`, `message`) VALUES ( '" . $name . "', '" . $email . "', '" . $subject . "' , '" . $content . "')";
+                $conn->query($sql);
+                echo '<script> swal("Thank you!", "Your message has been sent successfully", "success"); </script>';
+            } else {
+                echo 'swal("Wrong!", "Empty inputs", "error");</script>';
+
+            }
+        }
+        ?>
+
+
+
+    <section class="part1">
+        <div class="navbar">
+            <img src="img/Picture1.png" class="logo">
+            <ul>
+                <li><a  href="index.php">Home</a></li>
+                <li><a  href="Products.php">Products</a></li>
+                <li><a  href="cart.php">cart</a></li>
+                <li><a  href="Contact.php" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="h-100 h-custom" style="background-color: #eee;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center card card-body row rounded-3">
+
+                <div class=" text align-items-center ">
+                    <h4 class="text-center">&nbsp;Contact Us&nbsp;&nbsp;</h4>
+
+                </div>
+
+
+
+
+                <div class="col-lg-6 col-md-6">
+                    <form action="contact.php" method="POST" name="form1" class="tm-contact-form"
+                        onsubmit=" return validateform()">
+                        <div class="form-group">
+                            <label class="form-label" for="typeName"> Name</label>
+                            <input type="text" id="contact_name" class="form-control" id="name" name="name" />
+
+
+                            <div id="m1"></div> <br />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="typeName">Email</label>
+                            <input type="email" id="contact_email" class="form-control" name="email" required />
+                            <div id="m2"></div><br />
+
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="typeName">Subject</label>
+                            <input type="text" id="contact_subject" class="form-control" id="subject" name="subject"
+                                required />
+                            <div id="m3"></div><br />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="typeName">Message</label>
+                            <textarea id="contact_message" class="form-control" rows="6" name="message"></textarea>
+                            <div id="m4"></div> <br />
+                        </div>
+                        <div class="form-group text-center">
+                            <button class="btn btn-danger btn-block btn-lg " name="submit"
+                                onclick="ValidateEmail(document.form1.email)">Send message</button> <br />
+                        </div>
+
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+
+        </div>
+    </section>
+    <script>
+
+
+        //js user input validation
+        function ValidateEmail(inputText) {
+            var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+            if (inputText.value.match(mailformat)) {
+
+
+                document.form1.sumbit();
+
+
+                return true;
+            } else {
+                swal("Wrong!", "You have entered an invalid email address!", "error");
+
+
+
+                return false;
+            }
+        }
+
+
+        function validateform() {
+            var name = document.form1.name.value;
+            var subject = document.form1.subject.value;
+            var message = document.form1.message.value;
+            var p = subject.length < 5;
+            var n = name === null || name === "";
+            var m = message === null || message === "";
+
+            if (p)
+                document.getElementById("m3").innerHTML = "subject must be at least 5 characters long.";
+
+            if (n)
+                document.getElementById("m1").innerHTML = "Name can't be blank";
+
+            if (m)
+                document.getElementById("m4").innerHTML = "Message can't be blank";
+
+            if (p || n || m)
+                return false;
+
+            else return true;
+
+        }
+
+
+
+        //js-event handler for clarification
+        var name1 = document.getElementById("contact_name");
+        name1.onfocus = function () {
+            m1.innerHTML = "Enter your full name in this input box."
+        };
+        name1.onblur = function () {
+            m1.innerHTML = ""
+        };
+        var email1 = document.getElementById("contact_email");
+        email1.onfocus = function () {
+            m2.innerHTML = "Enter your e-mail address in this input box, in the format user@domain."
+        };
+        email1.onblur = function () {
+            m2.innerHTML = ""
+        };
+
+        var subject1 = document.getElementById("contact_subject");
+        subject1.onfocus = function () {
+            m3.innerHTML = "Enter your Subject in this input box"
+        };
+        subject1.onblur = function () {
+            m3.innerHTML = ""
+        };
+        var Massage1 = document.getElementById("contact_message");
+        Massage1.onfocus = function () {
+            m4.innerHTML = "Enter your  Message in this text area box"
+        };
+        Massage1.onblur = function () {
+            m4.innerHTML = ""
+        };
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+</body>
+
+<!--footer-->
+<footer class="bg-dark text-center text-white">
+
+    <div class="container ">
+        <div class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top bg-dark ">
+            <div class=" d-flex align-items-center">
+                <div class="row margin-bottom-60">
+                    <div class="col-lg-3 col-md-3 tm-footer-div">
+                        <img src="img/Picture1.png" class="fotter">
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 tm-footer-div">
+
+                        <p class="margin-top-15">A place to discover amazing products, thought-provoking ideas, and our
+                            point of view on the world of
+                            beauty.</p>
+
+                    </div>
+                    <div class="col-lg-3 col-md-3 tm-footer-div ">
+                        <h5><a href="Adminlogin.php" class="text-white">Admin login</a></h5>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+</footer>
+
+</html>
+
+<!----------------------------------------------- Adminlogin.php ---------------------------------------------->
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Admin login</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!--to start with bootstrap you should include these 2 lines-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <?php
+        include_once "DBconnection.php";
+        if (isset($_POST['submit'])) {
+            if (!empty($_POST['username']) && !empty($_POST['password'])) {
+
+                $name = $_POST["username"];
+                $pass = $_POST["password"];
+                $sql = "SELECT `id`, `pass` FROM `admin` WHERE `id` = '" . $name . "' AND`pass` = '" . $pass . "'";
+
+
+                $query = $conn->query($sql);
+
+                if ($query->num_rows > 0) {
+
+                    header('location: Admin.php');
+                } else {
+                    echo '<script> swal("Wrong!", "You have entered an invalid username or password! Try again", "error"); </script>';
+
+                }
+            } else {
+                echo 'swal("Wrong!", "Empty inputs", "error");</script>';
+            }
+
+
+
+
+        }
+        ?>
+
+
+
+
+    <section class="part1">
+        <div class="navbar">
+            <img src="img/Picture1.png" class="logo">
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="Products.php">Products</a></li>
+                <li><a href="cart.php">cart</a></li>
+                <li><a href="Contact.php" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="h-100 h-custom" style="background-color: #eee;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center card card-body row rounded-3">
+
+                <div class=" text align-items-center ">
+                    <h4 class="text-center">&nbsp;Admin Login &nbsp;&nbsp;</h4>
+
+                </div>
+
+                <div class="col-lg-6 col-md-6">
+                    <form method="POST" action="Adminlogin.php" name="form1" class="tm-contact-form "
+                        onsubmit=" return validateform()">
+                        <div class="form-group">
+                            <label class="form-label" for="username">UserName:</label>
+                            <input type="text" id="username" class="form-control" name="username" />
+                            <div id="m1"></div> <br />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="typeName">Password:</label>
+                            <input type="text" id="password" class="form-control" name="password" />
+                            <div id="m2"></div><br />
+
+                        </div>
+
+
+                        <div class="form-group text-center">
+                            <button class="btn btn-danger btn-block btn-lg " name="submit">LOGIN</button> <br />
+                        </div>
+
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+
+        </div>
+    </section>
+    <script>
+        var name1 = document.getElementById("username");
+        name1.onfocus = function () {
+            m1.innerHTML = ""
+        };
+        var pass1 = document.getElementById("password");
+        pass1.onfocus = function () {
+            m2.innerHTML = ""
+        };
+        function validateform() {
+            var name = document.form1.username.value;
+            var password = document.form1.password.value;
+            var p = password.length < 5;
+            var n = name === null || name === "";
+            if (p)
+                document.getElementById("m2").innerHTML = "Password must be at least 5 characters long.";
+
+            if (n)
+                document.getElementById("m1").innerHTML = "Name can't be blank";
+
+            if (p || n)
+                return false;
+
+            else {
+
+                return true;
+            }
+
+        }
+
+
+    </script>
+
+
+</body>
+
+<!--footer-->
+<footer class="bg-dark text-center text-white">
+
+    <div class="container ">
+        <div class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top bg-dark ">
+            <div class=" d-flex align-items-center">
+                <div class="row margin-bottom-60">
+                    <div class="col-lg-3 col-md-3 tm-footer-div">
+                        <img src="img/Picture1.png" class="fotter">
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 tm-footer-div">
+
+                        <p class="margin-top-15">A place to discover amazing products, thought-provoking ideas, and our
+                            point of view on the world of
+                            beauty.</p>
+
+                    </div>
+                    <div class="col-lg-3 col-md-3 tm-footer-div ">
+                        <h5><a href="Adminlogin.php" class="text-white">Admin login</a></h5>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+</footer>
+
+</html>
+
+<!------------------------------------------------ Admin.php ------------------------------------------------------------>
+<?php
+session_start();
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Admin Page</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <!--to start with bootstrap you should include these 2 lines-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <?php
+        include_once "DBconnection.php";
+        ?>
+    <section class="part1">
+        <div class="navbar">
+            <img src="img/Picture1.png" class="logo">
+            <ul>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="Products.php">Products</a></li>
+                <li><a href="cart.php" class="active">cart</a></li>
+                <li><a href="Contact.php">Contact</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="h-100 h-custom" style="background-color: #eee;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-body ">
+                            <div class="row">
+
+                                <div class="col">
+                                    <div class="card bg-light  rounded-3 text-center ">
+                                        <h4 class="py-3">
+                                            Products</h4>
+
+                                        <div class="card-body table-responsive ">
+                                            <table class=" table table-hover  ">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col"> Product</th>
+                                                        <th scope="col"> Product Name</th>
+                                                        <th scope="col">price</th>
+                                                        <th scope="col"> Change price?</th>
+                                                        <th scope="col">Delete?</th>
+
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <?php
+                                                        $sql = "SELECT * FROM `item`";
+                                                        $result = $conn->query($sql);
+
+                                                        if ($result->num_rows > 0) {
+                                                            // output data of content menu
+                                                            while ($row = $result->fetch_assoc()) {
+                                                        ?>
+
+                                                    <tr>
+                                                        <td> <img src="img/<?php echo $row["image"]; ?>"
+                                                                class="bd-placeholder-img card-img-top" width="50px"
+                                                                height="50px" /></td>
+                                                        <th>
+                                                            <?php echo $row["name"]; ?>
+                                                        </th>
+
+                                                        <td>
+                                                            <?php echo $row["price"]; ?>
+                                                        </td>
+                                                        <td> <button class="btn btn-danger btn-sm"
+                                                                onclick="changeprice(<?php echo $row['productID']; ?>);">Change
+                                                                price</button>
+                                                        </td>
+                                                        <td> <button class="btn btn-danger btn-sm"
+                                                                onclick="deleteitem(<?php echo $row['productID']; ?>);">Delete</button>
+                                                        </td>
+
+                                                    </tr>
+                                                    <?php
+                                                            }
+                                                        }
+                                                                ?>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body ">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <div class="card bg-light  rounded-3 text-center ">
+                                        <h4 class="py-3">
+                                            orders</h4>
+
+                                        <div class="card-body table-responsive ">
+                                            <table class=" table table-hover  ">
+                                                <thead>
+                                                    <tr>
+                                                        <th scope="col"> Order ID</th>
+                                                        <th scope="col"> Customer Name</th>
+                                                        <th scope="col">Address</th>
+
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <?php
+                                                        $sql = "SELECT * FROM `order`";
+                                                        $result = $conn->query($sql);
+
+                                                        if ($result->num_rows > 0) {
+                                                            // output data of content menu
+                                                            while ($row = $result->fetch_assoc()) {
+                                                        ?>
+
+                                                    <tr>
+                                                        <th>
+                                                            <?php echo $row["orderID"]; ?>
+                                                        </th>
+                                                        <td>
+                                                            <?php echo $row["Custmername"]; ?>
+                                                        </td>
+                                                        <td>
+                                                            <?php echo $row["Address"]; ?>
+                                                        </td>
+                                                    </tr>
+                                                    <?php
+                                                            }
+                                                                }
+                                                        ?>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <script>
+
+        function changeprice(id) {
+            var price;
+            swal("Write new price:", {
+                content: "input",
+            })
+                .then((value) => {
+                    if (value > 0) {
+                        price = value;
+                        swal("Done!", "the price has been changed successfully", "success")
+                            .then((value) => {
+                                location.replace('change_price.php?id=' + id + '&price=' + price);
+                            }
+                            )
+                    } else {
+                        swal("wrong!", "the price can not be 0 or less than 0", "error");
+                    }
+
+
+
+
+                });
+
+        }
+
+
+        function deleteitem(id) {
+            var answer = window.confirm("Are you sure to delete the product?!?");
+            if (answer) {
+                location.replace('delete_product.php?id=' + id);
+            }
+
+        }
+    </script>
+
+    <!--footer-->
+    <footer class="bg-dark text-center text-white">
+
+        <div class="container ">
+            <div class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top bg-dark ">
+                <div class=" d-flex align-items-center">
+                    <div class="row margin-bottom-60">
+                        <div class="col-lg-3 col-md-3 tm-footer-div">
+                            <img src="img/Picture1.png" class="fotter">
+                        </div>
+
+                        <div class="col-lg-6 col-md-6 tm-footer-div">
+
+                            <p class="margin-top-15">A place to discover amazing products, thought-provoking ideas, and
+                                our point of view on the world of
+                                beauty.</p>
+
+                        </div>
+                        <div class="col-lg-3 col-md-3 tm-footer-div ">
+                            <h5><a href="index.php" class="text-white">Admin logout</a></h5>
+
+
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+    </footer>
+
+
+</body>
+
+
+</html>
+
+<!----------------------------------------------- change_price.php ----------------------------------------------------->
+<?php
+include_once "DBconnection.php";
+$id = $_GET['id'];
+$price = $_GET['price'];
+$sql = "UPDATE `item` SET `price`= " . $price . " WHERE `productID` =" . $id;
+if ($conn->query($sql) === TRUE) {
+    header('location: Admin.php');
+}
+
+<!------------------------------------------------ delete_product.php ---------------------------------------------------->
+<?php
+include_once "DBconnection.php";
+$id = $_GET['id'];
+$sql = "DELETE FROM `item` WHERE `productID` =" . $id;
+if ($conn->query($sql) === TRUE) {
+    header('location: Admin.php');
+}
+
